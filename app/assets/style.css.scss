@@ -1,0 +1,35 @@
+body{
+	font-family:'Arial', sans-serif;
+	background:#eee;
+	line-height:1.6em;
+}
+.jumbotron{
+	margin:20px;
+	background-image: url(images/banner.jpg);
+	background-size: cover;
+	color: white;
+}
+.navbar{
+	overflow:auto;
+	min-height:100px;
+	background:#36424a;
+	color:#fff;
+	font-size:18px;
+	border:0;
+	border-radius:0;
+}
+.navbar h1{
+	margin:10px 0 0 0;
+	padding:0;
+}
+.navbar a:hover{
+	color:#ff953f;
+}
+
+.navbar ul{
+	margin-top:22px;
+}
+.navbar-default .navbar-nav > .active a, .navbar-default .navbar-nav >.active > .active > a:hover, navbar-default .navbar-nav > active > a:focus{
+	background:none;
+	color:#ff953f;
+}

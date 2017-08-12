@@ -1,0 +1,31 @@
+<div id = "admin-parts-show">
+	<div class="parts-show-right">
+		<h3>Information Requested</h3>
+		<ul>
+			<li><strong>Name:</strong> <%= @part.first_name %> <%= @part.last_name %></li>
+			<li><strong>Email:</strong> <%= @part.email_address %></li>
+			<li><strong>Phone:</strong> <%= @part.phone_number %></li>
+			<hr \>
+			<li><strong>Make:</strong> <%= @part.make %></li>
+			<li><strong>Model:</strong> <%= @part.model %></li>
+			<li><strong>Vin:</strong> <%= @part.vin %></li>
+
+			<li><strong>Year:</strong> <%= @part.year %></li>
+			<li><strong>Part:</strong> <%= @part.part_name %></li>
+
+		</ul>
+	</div>
+		<div class="clearfix"></div>
+		<div class="parts-show-left">
+		<h4>Description</h4>
+		<p><%= @part.details %></p><br />
+
+		<p><%= image_tag @part.image_url() unless @part.image.blank?%></p><br />
+
+		<p><strong>Created: </strong><%= time_ago_in_words(@part.created_at) %></p>
+
+		<br \>
+	</div>
+	<%= link_to 'Back to Home', admin_parts_path, class:'btn btn-primary' %>  <%=link_to "Transaction Completed", admin_part_path(@part, type: :normal), class:'btn btn-danger', method: :delete, data: {confirm: 'Are you sure'} %>
+
+</div>

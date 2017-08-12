@@ -1,0 +1,74 @@
+<script>
+  $(function() {
+    $('textarea#froala-editor').froalaEditor({
+      height: 300
+    })
+  });
+</script>
+<section>
+	
+    <h2>We're here to help</h2><br /><br />
+
+    <div class="container well-sm">
+      <div class="row">
+        <div class="col-md-6">
+		
+      	<h4>SPEAK TO US</h4>
+		<p>1.876.555.5555</p><br /><br />
+      	<h4>GET IN TOUCH WITH US</h4><br />
+		
+		<%= form_for @contact do |f| %>
+			<% if @contact.errors.any? %>
+				<% @contact.errors.full_messages.each do |msg| %>
+					<!-- Show errors -->
+					<div class="alert alert-danger"><%= msg %></div>
+				<% end %>
+			<% end %>
+		<p>
+			<div class="form-group">
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name, class:'form-control' %><br />
+			</div>
+			
+			<div class="form-group">
+				<%= f.label :last_name %><br />
+				<%= f.text_field :last_name, class:'form-control' %><br />
+			</div>
+
+			<div class="form-group">
+				<%= f.label :email %><br />
+				<%= f.text_field :email, class:'form-control' %><br />
+			</div>
+
+
+			<div class="form-group">
+				<%= f.label :message %>
+				<%= f.text_area :message, class:'form-control', id:'froala-editor' %>
+			</div>
+			
+
+			<%= f.submit "Submit", class:'btn btn-primary' %>
+			<%= link_to "Cancel", parts_path, class:'btn btn-default' %>
+		<% end %>
+		</p>
+
+     </div>
+        <div class="col-md-6">
+          <h4>CONTACT BY MAIL</h4>
+		  <p>18 St. James Avenue</p>
+		  <p>Kingston 5</p>
+		  <p>Jamaica</p><br /><br />
+
+		  <h4>EMAIL</h4>
+		  <p>Email: sales@876partfinder.com</p>
+	</div> 
+   </div>
+ </div>
+ 
+</section>
+
+
+
+ 
+
+

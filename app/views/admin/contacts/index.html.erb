@@ -1,0 +1,28 @@
+<h2 class="page-header">Admin/Contact Posts
+</h2>
+<table class="table table-striped contacts">
+	<thead>
+		<tr>
+		  <th>First name</th>
+		  <th>Last name</th>
+		  <th>Email</th>
+		  <th>Message</th>
+		  <th>Date</th>
+		  <th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @contacts.each do |contact| %>
+			<tr>
+				<td><%= contact.first_name %></td>
+				<td><%= contact.last_name %></td>
+				<td><%= link_to contact.email, admin_contact_path(contact) %></td>
+				<td><%= truncate(contact.message, length:50) %></td>
+				<td><%= time_ago_in_words(contact.created_at) %></td>
+				<!--<td><a href="#" class="btn btn-promary">Edit</a><a href="#" class="btn btn-danger">Delete</a></td> -->
+				<td><%= link_to "View", admin_contact_path(contact), class:'btn btn-primary' %> | <%=link_to "Delete", admin_contact_path(contact), class:'btn btn-danger', method: :delete, data: {confirm: 'Are you sure'} %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<%= will_paginate @contacts, render: BootstrapPagination::Rails, inner_window: 1, outer_window: 0 %>

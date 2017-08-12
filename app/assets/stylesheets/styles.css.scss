@@ -1,0 +1,39 @@
+body{
+	font-family:'Arial', sans-serif;
+	background:white;
+	line-height:1.6em;
+	
+}
+li{
+	list-style-type: none;
+}
+.jumbotron{
+	margin:20px;
+	background-image: url("banner.jpg");
+	background-size: cover;
+	color: white;
+}
+.navbar-brand {
+  padding: 0 10px 0 0; /* firefox bug fix */
+}
+.navbar-brand>img {
+  height: 300px;
+  padding: 15px; /* firefox bug fix */
+  width: auto;
+}
+
+.well-sm{
+	background-color:#eee ;
+	width: 150%;
+
+}
+
+/*.navbar{
+	overflow:auto;
+	min-height:100px;
+	/*background:#36424a;
+	color:#fff;
+	font-size:18px;
+	border:0;
+	border-radius:0;
+}*/

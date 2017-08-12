@@ -1,0 +1,21 @@
+<div id = "admin-posts-show">
+	<div class="contacts-show-right">
+		<h3>Information Requested</h3>
+		<ul>
+			<li><strong>Name:</strong> <%= @contact.first_name %> <%= @contact.last_name %></li>
+			<li><strong>Email:</strong> <%= @contact.email %></li>
+			<hr \>
+
+		</ul>
+	</div>
+		<div class="clearfix"></div>
+		<div class="contact-show-left">
+		<h4><strong>Message</strong></h4>
+		<%= @contact.message %><br />
+		<p><strong>Created: </strong><%= time_ago_in_words(@contact.created_at) %></p>
+
+		<br \>
+	</div>
+	<%= link_to 'Back to Home', admin_contacts_path, class:'btn btn-primary' %>  <%=link_to "Delete", admin_contact_path(@contact), class:'btn btn-danger', method: :delete, data: {confirm: 'Are you sure'} %>
+
+</div>

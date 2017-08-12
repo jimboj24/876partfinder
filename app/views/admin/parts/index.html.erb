@@ -1,0 +1,32 @@
+
+<h2 class="page-header">Admin/Manage Parts
+</h2>
+<table class="table table-striped parts">
+	<thead>
+		<tr>
+		  <th>Make</th>
+		  <th>Model</th>
+		  <th>VIN/Chassis Number</th>
+		  <th>Part Name</th>
+		  <th>Customer Name</th>
+		  <th>Date</th>
+		  <th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @parts.each do |part| %>
+			<tr>
+				<td><%= part.make %></td>
+				<td><%= part.model %></td>
+				<td><%= part.vin %></td>
+				<td><%= part.part_name %></td>
+
+				<td><%= part.first_name %> <%= part.last_name %></td>
+				<td><%= part.created_at.strftime("%Y-%m-%d") %></td>
+				<!--<td><a href="#" class="btn btn-promary">Edit</a><a href="#" class="btn btn-danger">Delete</a></td> -->
+				<td><%= link_to "View", admin_part_path(part), class:'btn btn-primary' %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<%= will_paginate @parts, render: BootstrapPagination::Rails, inner_window: 1, outer_window: 0 %>
