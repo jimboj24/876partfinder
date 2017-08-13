@@ -35,9 +35,9 @@ class Admin::PartsController < Admin::ApplicationController
       @part.really_destroy!
       flash[:notice] = 'Record deleted'
     elsif 
-      @part = Part.with_deleted.find(params[:id])
+      @part = @part.with_deleted.find(params[:id])
       params[:type] == 'undelete'
-      @part.restore
+      @part.restore(params[:id])
       flash[:notice] = 'Record restored'
     end
     

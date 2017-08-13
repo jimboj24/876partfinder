@@ -8,8 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+
 # Use devise for authentication
 #gem 'devise'
 # Use Puma as the app server
@@ -64,3 +63,13 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'carrierwave'
 gem "paranoia", "~> 2.2"
+
+group :development do
+  # Use postgresql as the database for Active Record
+
+end
+group :production do
+  # Use postgresql as the database for Active Record
+	gem 'pg'
+	gem 'rails_12factor'
+end
